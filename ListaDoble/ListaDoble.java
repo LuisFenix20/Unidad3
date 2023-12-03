@@ -69,8 +69,8 @@ public class ListaDoble{
 
 		//boolean NodoNoEncontrado = true;
 
-		while ( (temp2 != null) 
-				&& temp2.name.equals(buscado) == false ) {	
+		while ( (temp2 != null) && temp2.name.equals(buscado) == false ) {
+					
 		         temp2 = temp2.next;
 		}
 
@@ -107,8 +107,8 @@ public class ListaDoble{
 	public boolean borrarCualquierNodo(String buscado){
 		Node temp = this.topForward;
 
-		while ( (temp != null) 
-				&& temp.name.equals(buscado) == false ) {	
+		while ( (temp != null) && temp.name.equals(buscado) == false ) {
+					
 		         temp = temp.next;
 		}
 
