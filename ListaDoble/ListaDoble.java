@@ -51,6 +51,26 @@ public class ListaDoble{
 		temp = null;
 	}
 
+	public void insertaAntesUltimoNodo(String nombre) {
+		Node temp = new Node();
+		temp.name = nombre;
+	
+		if (topBackward == null) {
+			
+			insertaPrimerNodo(nombre);
+			return;
+		}
+	
+		temp.next = topBackward;
+		temp.previous = topBackward.previous;
+	
+		if (topBackward.previous != null) {
+			topBackward.previous.next = temp;
+		}
+	
+		topBackward.previous = temp;
+	}
+
 	public void insertaAlFinal(String nombre){
 		Node temp = new Node ();
 		temp.name = nombre;
