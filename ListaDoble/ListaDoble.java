@@ -166,13 +166,57 @@ public class ListaDoble{
 		return temp;
 	}
 
-	public void intercambiarNodos(String nombreBuscado, String nombreNuevo) {
-		Node nodoBuscado = buscarPorNombre(nombreBuscado);
-	
-		if (nodoBuscado != null) {
-			nodoBuscado.name = nombreNuevo;
-		}
-	}
+	public void intercambiarNodos(String internodo1, String internodo2) {
+    Node nodoBuscado = buscarPorNombre(internodo1);
+    Node nodoNuevo = buscarPorNombre(internodo2);
+
+    if (nodoBuscado != null && nodoNuevo != null) {
+      
+        Node anteriorBuscado = nodoBuscado.previous;
+        Node siguienteBuscado = nodoBuscado.next;
+        Node anteriorNuevo = nodoNuevo.previous;
+        Node siguienteNuevo = nodoNuevo.next;
+
+       
+        if (anteriorBuscado != null) {
+            anteriorBuscado.next = nodoNuevo;
+        } else {
+            
+            topForward = nodoNuevo;
+        }
+
+        if (siguienteBuscado != null) {
+            siguienteBuscado.previous = nodoNuevo;
+        } else {
+            
+            topBackward = nodoNuevo;
+        }
+
+        if (anteriorNuevo != null) {
+            anteriorNuevo.next = nodoBuscado;
+        } else {
+           
+            topForward = nodoBuscado;
+        }
+
+        if (siguienteNuevo != null) {
+            siguienteNuevo.previous = nodoBuscado;
+        } else {
+           
+            topBackward = nodoBuscado;
+        }
+
+        
+        Node tempNext = nodoBuscado.next;
+        Node tempPrev = nodoBuscado.previous;
+
+        nodoBuscado.next = nodoNuevo.next;
+        nodoBuscado.previous = nodoNuevo.previous;
+
+        nodoNuevo.next = tempNext;
+        nodoNuevo.previous = tempPrev;
+    }
+}
 
 	//TODO: Crear el método para borrar el nodo buscado
 	//Adecuación del método de borrado: borrarCualquierNodo()
