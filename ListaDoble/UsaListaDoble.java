@@ -38,7 +38,7 @@ public class UsaListaDoble{
 
         System.out.println();
 
-       lista.insertaAntesUltimoNodo("L");
+        lista.insertaAntesUltimoNodo("L");
 
 
         System.out.println("Lista después de insertar antes del último:");
