@@ -44,11 +44,10 @@ public class UsaListaDoble{
         System.out.println("Lista después de insertar antes del último:");
         lista.imprimir();
 
-        String nombreBuscado = "Z";
-        String nombreNuevo = "J";
-        lista.intercambiarNodos(nombreBuscado, nombreNuevo);
+        
 
-        System.out.println("Lista después de intercambiar el nodo " + nombreBuscado + " por " + nombreNuevo + ":");
+        lista.intercambiarNodos("H", "L");
+        System.out.println("Lista después de intercambiar nodos:");
         lista.imprimir();
     }
 }
